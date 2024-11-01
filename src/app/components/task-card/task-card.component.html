@@ -1,0 +1,11 @@
+<li
+  class="task"
+  [ngClass]="{ 'task--done': task().done }"
+>
+  <input type="checkbox" [(ngModel)]="task().done" />
+  <p>{{ task().title }}</p>
+
+  @if (task().daysLeft) {
+  <p>Faltam {{ task().daysLeft }} dias</p>
+  }
+</li>

@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    &__logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &__item {
+            list-style: none;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 10px;
+
+        &__login, &__signup {
+            padding: 0.5rem 1rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        &__login {
+            background-color: #333;
+            color: #fff;
+        }
+
+        &__signup {
+            background-color: #fff;
+            color: #333;
+        }
+    }
+}
+
+

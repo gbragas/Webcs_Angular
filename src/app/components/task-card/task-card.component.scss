@@ -1,0 +1,18 @@
+.task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid #4d4646;
+    border-radius: 8px;
+
+    padding: 10px;
+
+    background-color: #605656;
+    color: white;
+
+    &--done {
+        background-color: #44874e;
+        text-decoration: line-through;
+    }
+}

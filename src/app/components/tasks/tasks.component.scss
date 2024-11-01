@@ -1,0 +1,32 @@
+.tasks {
+    margin: 10px;
+    padding: 10px 20px;
+    
+    border: 1px solid #605656;
+    border-radius: 16px;
+
+    &__title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    input {
+        height: 33.5px;
+        margin-right: 5px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    &__empty {
+        font-size: 18px;
+        font-style: italic;
+        text-align: center;
+    }
+}

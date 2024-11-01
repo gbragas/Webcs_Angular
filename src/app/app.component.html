@@ -1,44 +1,18 @@
-<section class="welcome">
-  <h1>{{ title }}</h1>
+<app-header></app-header>
 
-  <input
-    #inputTitle
-    type="text"
-    name="title"
-    (input)="updateTitle(inputTitle.value)"
-    [value]="title"
-  />
-
-  <h2>{{ welcomeMsg }}</h2>
-
-  <input type="text" name="welcome" [(ngModel)]="welcomeMsg" />
-</section>
-
-<section class="tasks">
-  <button (click)="showList = !showList">Mostrar Lista</button>
-
-  <h3 class="tasks__title">Lista de tarefas</h3>
-
-  <input
-    #inputTask
-    type="text"
-    name="task"
-    > <button>add</button>
-
-  @if (showList) {
-    <ul class="tasks__list">
-      @for (task of tasks; track $index) {
-      <li class="tasks__list__item" [ngClass]="{'tasks__list__item--done': task.done}">
-        <input type="checkbox" [(ngModel)]="task.done"> <p>{{ task.title }}</p>
-
-        @if (task.daysLeft) {
-          <p>Faltam {{ task.daysLeft }} dias</p>
-        }
-      </li>
-      }
-    </ul>
-  } @else {
-    <p>Lista escondida</p>
-  }
-  
-</section>
+<main>
+  <h2>Total de tarefas {{ tasksCount }}</h2>
+  <app-tasks
+    title="Tarefas de casa"
+    (taskCreated)="newTaskCreated($event)"
+  ></app-tasks>
+  <app-tasks
+    title="Tarefas da facudade"
+    (taskCreated)="newTaskCreated($event)"
+  ></app-tasks>
+  <app-tasks
+    title="Tarefas do trabalho"
+    (taskCreated)="newTaskCreated($event)"
+  ></app-tasks>
+  <app-tasks title="Lazer" (taskCreated)="newTaskCreated($event)"></app-tasks>
+</main>

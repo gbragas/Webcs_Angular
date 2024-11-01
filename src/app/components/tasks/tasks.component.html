@@ -1,0 +1,24 @@
+<section class="tasks">
+  <h3 class="tasks__title">{{ title() }}</h3>
+
+  <input
+    #inputTask
+    type="text"
+    name="task"
+    (keydown.enter)="addTask(inputTask.value); inputTask.value = ''"
+  />
+  <app-button
+    (click)="addTask(inputTask.value); inputTask.value = ''"
+    label="add"
+  ></app-button>
+
+  @if (tasks.length) {
+  <ul class="tasks__list">
+    @for (task of tasks; track $index) {
+    <app-task-card [task]="task"></app-task-card>
+    }
+  </ul>
+  } @else {
+  <h3 class="tasks__empty">Nenhuma Tarefa Por Enquanto</h3>
+  }
+</section>
